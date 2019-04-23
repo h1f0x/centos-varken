@@ -44,7 +44,11 @@ RUN chown varken:varken -R /opt/Varken
 
 # Grafana
 RUN yum install -y initscripts urw-fonts
-RUN yum install -y https://dl.grafana.com/oss/release/grafana-5.4.2-1.x86_64.rpm
+RUN yum install -y https://dl.grafana.com/oss/release/grafana-6.1.4-1.x86_64.rpm
+
+# nginx
+RUN yum install -y nginx
+RUN cp -r /defaults/nginx/nginx.conf /etc/nginx/nginx.conf
 
 
 # crontab
@@ -56,6 +60,7 @@ RUN systemctl enable influxdb
 RUN systemctl enable prepare-config.service
 RUN systemctl enable varken.service
 RUN systemctl enable grafana.service
+RUN systemctl enable nginx
 
 WORKDIR /root/
 
