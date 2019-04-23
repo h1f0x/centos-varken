@@ -22,7 +22,7 @@ The following volumes will get mounted:
 To get the docker up and running execute fhe following command:
 
 ```
-sudo docker run -it --privileged --name varken -v /path/to/config:/config -d -p 3000:3000 h1f0x/centos-varken
+sudo docker run -it --privileged --name varken -v /path/to/config:/config -d -p 3000:80 h1f0x/centos-varken
 ```
 > PLEASE MODIFY YOUR VARKEN.INI TO YOU NEEDS: /path/to/config/varken.ini
 
@@ -33,15 +33,17 @@ docker restart varken
 Visit: http://localhost:3000
 - Login with: admin/admin
 
-1. Add InfluxDB datasource:
-- bla
-
-![InfluxDB](https://github.com/h1f0x/centos-varken/blob/master/images/2.png?raw=true) 
 
 2. Download latest Dashboard and modify to your needs:
-- blub
+- Dashboard > Import 
 
-![Dashboard](https://github.com/h1f0x/centos-varken/blob/master/images/2.png?raw=true) 
+![Add View](https://github.com/h1f0x/centos-varken/blob/master/images/2.png?raw=true) 
+
+> Current IDs: https://grafana.com/dashboards?category=databases&search=varken%20%5Bofficial%5D
+
+- Customize to your needs
+
+![Custom](https://github.com/h1f0x/centos-varken/blob/master/images/3.png?raw=true) 
 
 ## Configuration files
 

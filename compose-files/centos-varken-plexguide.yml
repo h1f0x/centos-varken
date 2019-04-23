@@ -14,7 +14,7 @@
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'varken'
-        intport: '3000'
+        intport: '80'
         extport: '5985'
         image: 'h1f0x/centos-varken'
 
