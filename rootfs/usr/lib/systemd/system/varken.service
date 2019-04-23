@@ -1,0 +1,17 @@
+[Unit]
+Description=Varken - Command-line utility to aggregate data from the Plex ecosystem into InfluxDB.
+After=network-online.target prepare-config.service
+StartLimitInterval=200
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=varken
+Group=varken
+WorkingDirectory=/opt/Varken
+ExecStart=/opt/Varken/varken-venv/bin/python /opt/Varken/Varken.py --data-folder /config
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
