@@ -26,7 +26,7 @@ RUN yum update -y
 RUN yum install -y net-tools initscripts wget git
 
 # Python 3.6.7 + pip
-RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm --skip-broken
 RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
 
 
