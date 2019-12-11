@@ -1,4 +1,4 @@
-FROM amd64/centos:latest
+FROM amd64/centos7
 
 # Enabled systemd
 ENV container docker
