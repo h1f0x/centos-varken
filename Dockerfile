@@ -62,6 +62,10 @@ RUN systemctl enable varken.service
 RUN systemctl enable grafana.service
 RUN systemctl enable nginx
 
+# Update Grafana Panels
+RUN grafana-cli plugins update-all
+RUN service grafana-server restart
+
 WORKDIR /root/
 
 # End
