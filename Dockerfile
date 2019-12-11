@@ -35,7 +35,7 @@ RUN yum install -y influxdb
 
 # Varken
 WORKDIR /opt/
-RUN git clone https://github.com/Boerderij/Varken.git
+RUN git clone -b develop --single-branch https://github.com/Boerderij/Varken.git
 RUN adduser --system --no-create-home varken
 WORKDIR /opt/Varken
 RUN /usr/bin/python3.6 -m venv /opt/Varken/varken-venv
