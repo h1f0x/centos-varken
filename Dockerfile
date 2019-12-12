@@ -50,6 +50,11 @@ RUN yum install -y https://dl.grafana.com/oss/release/grafana-6.1.4-1.x86_64.rpm
 RUN yum install -y nginx
 RUN cp -r /defaults/nginx/nginx.conf /etc/nginx/nginx.conf
 
+# Get telegraf # and install
+RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.8.3-1.x86_64.rpm
+RUN yum localinstall telegraf-1.8.3-1.x86_64.rpm
+WORKDIR /etc/telegraf/
+RUN systemctl start telegraf
 
 # crontab
 RUN yum install -y cronie
@@ -61,6 +66,7 @@ RUN systemctl enable prepare-config.service
 RUN systemctl enable varken.service
 RUN systemctl enable grafana.service
 RUN systemctl enable nginx
+RUN systemctl enable telegraf
 
 # Update Grafana Panels
 RUN grafana-cli plugins update-all
