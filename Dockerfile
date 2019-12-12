@@ -52,7 +52,7 @@ RUN cp -r /defaults/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Get telegraf # and install
 RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.8.3-1.x86_64.rpm
-RUN yum localinstall telegraf-1.8.3-1.x86_64.rpm
+RUN yum install -y telegraf-1.8.3-1.x86_64.rpm
 WORKDIR /etc/telegraf/
 RUN systemctl start telegraf
 
