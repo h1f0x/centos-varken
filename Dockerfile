@@ -54,7 +54,7 @@ RUN cp -r /defaults/nginx/nginx.conf /etc/nginx/nginx.conf
 RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.8.3-1.x86_64.rpm
 RUN yum install -y telegraf-1.8.3-1.x86_64.rpm
 WORKDIR /etc/telegraf/
-RUN systemctl start telegraf
+RUN service telegraf start
 
 # crontab
 RUN yum install -y cronie
